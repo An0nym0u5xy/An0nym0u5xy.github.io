@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"an0nym0u5xy.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="停课刷题记录DAY1CF1400E Clear the Multiset题意给定一个长度为$n$数列${a_n}$，你可以进行如下操作：  任意选择一个区间$[l,r](l\le r)$，使区间内的每一个数减$1$； 任意选择一个点$p$和一个正整数$x(x\ge 1$，使$a_p$减去$x$。  求把原数列全部变为$0$的最少的操作次数。$1\le n\le 5000$，$0\le a_i\le">
+<meta property="og:type" content="article">
+<meta property="og:title" content="停课做题记录">
+<meta property="og:url" content="https://an0nym0u5xy.github.io/2023/02/22/%E5%81%9C%E8%AF%BE%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="lxy&#39;s blog">
+<meta property="og:description" content="停课刷题记录DAY1CF1400E Clear the Multiset题意给定一个长度为$n$数列${a_n}$，你可以进行如下操作：  任意选择一个区间$[l,r](l\le r)$，使区间内的每一个数减$1$； 任意选择一个点$p$和一个正整数$x(x\ge 1$，使$a_p$减去$x$。  求把原数列全部变为$0$的最少的操作次数。$1\le n\le 5000$，$0\le a_i\le">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-22T03:11:00.000Z">
+<meta property="article:modified_time" content="2023-12-14T23:37:16.000Z">
+<meta property="article:author" content="Xingyu Lu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://an0nym0u5xy.github.io/2023/02/22/%E5%81%9C%E8%AF%BE%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://an0nym0u5xy.github.io/2023/02/22/%E5%81%9C%E8%AF%BE%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/","path":"2023/02/22/停课做题记录/","title":"停课做题记录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>停课做题记录 | lxy's blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lxy's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%9C%E8%AF%BE%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">停课刷题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DAY1"><span class="nav-number">1.1.</span> <span class="nav-text">DAY1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1400E-Clear-the-Multiset"><span class="nav-number">1.1.1.</span> <span class="nav-text">CF1400E Clear the Multiset</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">核心代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1110D-Jongmah"><span class="nav-number">1.1.2.</span> <span class="nav-text">CF1110D Jongmah</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-1"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90-1"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-1"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">核心代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1407D-Discrete-Centrifugal-Jumps"><span class="nav-number">1.1.3.</span> <span class="nav-text">CF1407D Discrete Centrifugal Jumps</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-2"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90-2"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-2"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">核心代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1389E-Calendar-Ambiguity"><span class="nav-number">1.1.4.</span> <span class="nav-text">CF1389E Calendar Ambiguity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-3"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90-3"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-3"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">核心代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DAY2"><span class="nav-number">1.2.</span> <span class="nav-text">DAY2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1542D-Priority-Queue"><span class="nav-number">1.2.1.</span> <span class="nav-text">CF1542D Priority Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-4"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90-4"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-4"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">核心代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1557D-Ezzat-and-Grid"><span class="nav-number">1.2.2.</span> <span class="nav-text">CF1557D Ezzat and Grid</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-5"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90-5"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-5"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">核心代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1034B-Little-C-Loves-3-II"><span class="nav-number">1.2.3.</span> <span class="nav-text">CF1034B Little C Loves 3 II</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-6"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90-6"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CF1335F-Robots-on-a-Grid"><span class="nav-number">1.2.4.</span> <span class="nav-text">CF1335F Robots on a Grid</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-7"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90-7"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81-6"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">核心代码</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Xingyu Lu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://an0nym0u5xy.github.io/2023/02/22/%E5%81%9C%E8%AF%BE%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xingyu Lu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lxy's blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="停课做题记录 | lxy's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          停课做题记录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-02-22 11:11:00" itemprop="dateCreated datePublished" datetime="2023-02-22T11:11:00+08:00">2023-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-15 07:37:16" itemprop="dateModified" datetime="2023-12-15T07:37:16+08:00">2023-12-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/oi/" itemprop="url" rel="index"><span itemprop="name">oi</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="停课刷题记录"><a href="#停课刷题记录" class="headerlink" title="停课刷题记录"></a>停课刷题记录</h1><h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><h3 id="CF1400E-Clear-the-Multiset"><a href="#CF1400E-Clear-the-Multiset" class="headerlink" title="CF1400E Clear the Multiset"></a>CF1400E Clear the Multiset</h3><h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>给定一个长度为$n$数列${a_n}$，你可以进行如下操作：</p>
+<ul>
+<li>任意选择一个区间$[l,r](l\le r)$，使区间内的每一个数减$1$；</li>
+<li>任意选择一个点$p$和一个正整数$x(x\ge 1$，使$a_p$减去$x$。</li>
+</ul>
+<p>求把原数列全部变为$0$的最少的操作次数。<br>$1\le n\le 5000$，$0\le a_i\le 10^9$。</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>发现清空一个区间 $[l,r]$ 有两种方式，第一种是每次把一个数变为 $0$，第二种是整段减最小值，这样原来的区间就变成了左右两个小区间，中间一个元素是 $0$。只有这两种做法可能最优，第一种很好理解，第二种因为如果在大区间都没有整段减，那在小区间就更不可能用了。分治计算即可。</p>
+<h4 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n,a[MAXN];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span> <span class="number">0</span>;<span class="keyword">if</span>(l==r) <span class="keyword">return</span> !!a[l];<span class="type">int</span> p=l;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=r;i++) <span class="keyword">if</span>(a[p]&gt;a[i]) p=i;</span><br><span class="line">    <span class="type">int</span> x=a[p];<span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=r;i++) a[i]-=x;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qmin</span>(r-l+<span class="number">1</span>,<span class="built_in">solve</span>(l,p<span class="number">-1ll</span>)+<span class="built_in">solve</span>(p+<span class="number">1ll</span>,r)+x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">qread</span>(n);<span class="type">int</span> i,j;<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">qread</span>(a[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">solve</span>(<span class="number">1</span>,n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1400/172907136">record</a></p>
+<h3 id="CF1110D-Jongmah"><a href="#CF1110D-Jongmah" class="headerlink" title="CF1110D Jongmah"></a>CF1110D Jongmah</h3><h4 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h4><p>你在玩一个叫做 Jongmah  的游戏，你手上有 $n$ 个麻将，每个麻将上有一个在 $1$ 到 $m$ 范围内的整数 $a_i$。</p>
+<p>为了赢得游戏，你需要将这些麻将排列成一些三元组，每个三元组中的元素是相同的或者连续的。如 $7,7,7$ 和 $12,13,14$ 都是合法的。你只能使用手中的麻将，并且每个麻将只能使用一次。</p>
+<p>请求出你最多可以形成多少个三元组。</p>
+<p>数据范围：$1\le n,m\le 10^6$，$1\le a_i\le m$。</p>
+<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><p>考虑 dp，设 $dp_i$ 表示用了编号前 $i$ 的麻将能组成的最多三元组数，但发现不好转移，于是状态中再记 $(i,i+1,i+2)$ 和 $(i-1,i,i+1)$ 的个数，又发现如果这两种三元组个数 $\geq 3$ 就一定能替换成数量相等的 $(i,i,i)$ 三元组，于是只用枚举到 $2$ 即可。</p>
+<h4 id="核心代码-1"><a href="#核心代码-1" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">qread</span>(n,m);<span class="type">int</span> i,j,k,l;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="type">int</span> x;<span class="built_in">qread</span>(x);cnt[x]++;</span><br><span class="line">&#125;<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++) <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++) <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;<span class="number">3</span>;k++) <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;<span class="number">3</span>;l++) </span><br><span class="line">    <span class="keyword">if</span>(cnt[i]&gt;=j+k+l) dp[i][k][l]=<span class="built_in">qmax</span>(dp[i][k][l],dp[i<span class="number">-1</span>][j][k]+(cnt[i]-j-k-l)/<span class="number">3</span>+l);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,dp[m][<span class="number">0</span>][<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1110/172908868">record</a></p>
+<h3 id="CF1407D-Discrete-Centrifugal-Jumps"><a href="#CF1407D-Discrete-Centrifugal-Jumps" class="headerlink" title="CF1407D Discrete Centrifugal Jumps"></a>CF1407D Discrete Centrifugal Jumps</h3><h4 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h4><p>有 $n$ 个高楼排成一行，每个楼有一个高度 $h_i$。称可以从楼 $i$ 跳到 楼 $j$，当 $i$, $j$ ( $i \lt j$ )满足以下三个条件之一：</p>
+<ul>
+<li>$i+1&#x3D;j$</li>
+<li>$\max(h_{i+1},h_{i+2},\cdots,h_{j-1})\lt\min(h_i,h_j)$</li>
+<li>$\min(h_{i+1},h_{i+2},\cdots,h_{j-1})\gt\max(h_i,h_j)$</li>
+</ul>
+<p>现在你在楼 $1$，请求出跳到楼 $n$ 最少要跳几次。</p>
+<p>$2 \leq n \leq 3\cdot 10^5$, $1\leq h_i \leq 10^9$。</p>
+<h4 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h4><p>发现第二个条件就相当于中间的全大于两边的，第三个条件相当于中间的全小于两边的。于是可以维护一个单调递增的单调栈和一个单调递减的单调栈。对于单调递增的单调栈，发现如果栈顶需要弹，那么栈顶到新加入的这位中间的高度一定都大于这位的高度，也一定大于栈顶之下的元素的高度。设 $dp_i$ 表示从 $1$ 跳到 $i$ 的最少次数，那么此时符合条件二， $dp_i$ 就能从栈顶之下的 dp 值转移。条件三同理。</p>
+<h4 id="核心代码-2"><a href="#核心代码-2" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">qread</span>(n);<span class="type">int</span> i,j;<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">qread</span>(a[i]);<span class="built_in">mem</span>(dp,<span class="number">0x7f</span>);</span><br><span class="line">dp[<span class="number">1</span>]=<span class="number">0</span>;t1=t2=<span class="number">1</span>;s1[<span class="number">1</span>]=s2[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    dp[i]=dp[i<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(t1&amp;&amp;a[i]&gt;=a[s1[t1]])&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[s1[t1]]!=a[i]) dp[i]=<span class="built_in">qmin</span>(dp[i],dp[s1[t1<span class="number">-1</span>]]+<span class="number">1</span>);t1--;</span><br><span class="line">    &#125;<span class="keyword">while</span>(t2&amp;&amp;a[i]&lt;=a[s2[t2]])&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[s2[t2]]!=a[i]) dp[i]=<span class="built_in">qmin</span>(dp[i],dp[s2[t2<span class="number">-1</span>]]+<span class="number">1</span>);t2--;</span><br><span class="line">    &#125;s1[++t1]=s2[++t2]=i;</span><br><span class="line">&#125;<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,dp[n]);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1407/172905551">record</a></p>
+<h3 id="CF1389E-Calendar-Ambiguity"><a href="#CF1389E-Calendar-Ambiguity" class="headerlink" title="CF1389E Calendar Ambiguity"></a>CF1389E Calendar Ambiguity</h3><h4 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h4><p>Berland 的一年有 $m$ 月，每个月有 $d$ 天，每周有 $w$ 天。保证一年的第一天一定是周一。<br>求数对 $(x,y)$ 的个数，使得 $x\lt y$ 且 $x$ 月的第 $y$ 天和 $y$ 月的第 $x$ 天在一周中是同一天。</p>
+<h4 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h4><p>推一波式子：<br>$$<br>(x-1)d+y \equiv (y-1)d+x\pmod{ w} \<br>xd-d+y \equiv yd-d+x\pmod{w} \<br>(x-y)d \equiv x-y\pmod{w} \ \ \ \ \ \<br>\Longleftrightarrow w\mid(x-y)(d-1) \<br>$$<br>答案就变成了：<br>$$<br>\sum\limits_{i&#x3D;1}^{\min{m,d}} \left\lfloor \frac{\min{m,d}-y}{t} \right\rfloor \<br>$$<br>，直接等差数列求和即可。</p>
+<h4 id="核心代码-3"><a href="#核心代码-3" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(T--)&#123;</span><br><span class="line">    <span class="built_in">qread</span>(m,d,w);</span><br><span class="line">    <span class="keyword">if</span>(d==<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0\n&quot;</span>);<span class="keyword">continue</span>;</span><br><span class="line">    &#125;<span class="type">int</span> t=<span class="built_in">lcm</span>(d<span class="number">-1ll</span>,w)/(d<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span>(t<span class="number">-1</span>&gt;<span class="built_in">qmin</span>(m,d))&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0\n&quot;</span>);<span class="keyword">continue</span>;</span><br><span class="line">    &#125;<span class="type">int</span> mn=<span class="built_in">qmin</span>(m,d),k=mn/t<span class="number">-1</span>;</span><br><span class="line">    <span class="type">int</span> ans=t*((<span class="number">1</span>+k)*k/<span class="number">2</span>);</span><br><span class="line">    ans+=(mn-(k+<span class="number">1</span>)*t)*(k+<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1389/172896425">record</a></p>
+<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><h3 id="CF1542D-Priority-Queue"><a href="#CF1542D-Priority-Queue" class="headerlink" title="CF1542D Priority Queue"></a>CF1542D Priority Queue</h3><h4 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h4><p>给定一个序列 $A$，$A$ 的每一个元素形如 <code>+ x</code> 和 <code>-</code>，其中 $x$ 为一个整数。<br>对于一个每个元素都形如 <code>+ x</code> 和 <code>-</code> 的序列 $S$，按如下方式计算 $f(S)$ 的值：</p>
+<ul>
+<li>你需要依次遍历 $S$ 中的元素，并且维护一个可重集 $T$。</li>
+<li>对于每个 $S$ 中的元素，若其为 <code>+ x</code>，那么就将 $x$ 加入 $T$，否则就删除 $T$ 最小的数。特别的，若 $T$ 中没有数，那么就不进行删除操作。</li>
+<li>在遍历完 $S$ 中的元素后，将可重集 $T$ 中所有数的和 $sum$ 算出来。$sum$ 即为 $f(S)$ 的值。<br>定义 $b$ 是 $a$ 的子序列当且仅当 $b$ 是由 $a$ 在不改变原有顺序的情况下删除若干元素得到的。现在对于 $A$ 的所有子序列 $B$，蓝想让你求出 $f(B)$ 的和模 $998244353$ 的值。<br>本题有 $1 \leq n \leq 500$，并且对于每个形如 <code>+ x</code> 元素中的 $x$，有  $1 \leq x \lt 998244353$。</li>
+</ul>
+<h4 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h4><p>考虑对于每一位 $i$，如果这个元素形如 $+x_i$，就算出这位对于答案的贡献。对于每一位 dp，$dp_{j,k}$ 表示枚举到第 $j$ 个元素，$T$ 中有 $k$ 个数比 $x_i$ 小的方案数，最后答案就是 $x_i\sum\ dp_{n,k}$。思考如何转移，发现有几种可能的情况：</p>
+<ol>
+<li><p>第 $j$ 个元素是 $-$</p>
+<p>此时该元素用不用均可，于是有 $dp_{j,k}&#x3D;dp_{j-1,k}+dp_{j-1,k+1}$，但要特殊判断一下如果 $k&#x3D;0 \and j&lt;i$，说明减掉最小值也不会对小于 $x_i$ 的数有影响，于是有 $dp_{j,k}&#x3D;dp_{j-1,k}$。</p>
+</li>
+<li><p>第 $j$ 个元素是 $+x_j$ 且 $x_j&gt;x_i$</p>
+<p>这样加不加入小于 $x_i$ 的数都不变，于是有 $dp_{j,k}&#x3D;2dp_{j-1,k}$。</p>
+</li>
+<li><p>第 $j$ 个元素是 $+x_j$ 且 $x_j&lt;x_i$</p>
+<p>此时有 $dp_{j,k}&#x3D;dp_{j-1,k}+dp_{j,k-1}$，特判一下 $k&#x3D;0$ 的情况。</p>
+</li>
+<li><p>第 $j$ 个元素是 $+x_j$ 且 $x_j&#x3D;x_i$</p>
+<p>如果 $j&lt;i$ 就相当于情况 $3$，否则相当于情况 $2$。</p>
+</li>
+</ol>
+<p>最后将每个 $+$ 的贡献求和即可。</p>
+<h4 id="核心代码-4"><a href="#核心代码-4" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);<span class="type">int</span> i,j,k;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line">    a[i].f=(s[<span class="number">0</span>]==<span class="string">&#x27;+&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(a[i].f) <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i].x);<span class="keyword">else</span> a[i].x=<span class="number">-1</span>;</span><br><span class="line">&#125;<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!a[i].f) <span class="keyword">continue</span>;<span class="built_in">mem</span>(dp,<span class="number">0</span>);dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==i)&#123;</span><br><span class="line">            <span class="built_in">memcpy</span>(dp[j],dp[j<span class="number">-1</span>],<span class="built_in">sizeof</span>(dp[j]));<span class="keyword">continue</span>;</span><br><span class="line">        &#125;<span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;=n;k++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!a[j].f)&#123;</span><br><span class="line">                (dp[j][k]=dp[j<span class="number">-1</span>][k]+dp[j<span class="number">-1</span>][k+<span class="number">1</span>])%=mod;</span><br><span class="line">                <span class="keyword">if</span>(!k&amp;&amp;j&lt;i) (dp[j][k]+=dp[j<span class="number">-1</span>][k])%=mod;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a[j].x&gt;a[i].x||(a[j].x==a[i].x&amp;&amp;j&gt;i)) (dp[j][k]=(dp[j<span class="number">-1</span>][k]&lt;&lt;<span class="number">1ll</span>))%=mod;</span><br><span class="line">            <span class="keyword">else</span> (dp[j][k]=dp[j<span class="number">-1</span>][k]+(k?dp[j<span class="number">-1</span>][k<span class="number">-1</span>]:<span class="number">0</span>))%=mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="type">int</span> sum=<span class="number">0</span>;<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=n;j++) (sum+=dp[n][j])%=mod;</span><br><span class="line">    (ans+=a[i].x*sum%mod)%=mod;</span><br><span class="line">&#125;<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1542/173034517">record</a></p>
+<h3 id="CF1557D-Ezzat-and-Grid"><a href="#CF1557D-Ezzat-and-Grid" class="headerlink" title="CF1557D Ezzat and Grid"></a>CF1557D Ezzat and Grid</h3><h4 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h4><p>一个 $n$ 行 $10^9$ 列的表格，$m$ 次操作，形如 <code>x l r</code>，每次将第 $x$ 行的 $[l,r]$ 涂黑，问最后至少删掉几行使得每相邻的两行都至少有一列使得这两行的该列都是黑的。$n,m\leq 3\times 10^5$。</p>
+<h4 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h4><p>线段树优化 dp。$dp_i$ 表示以 $i$ 结尾最多能保留多少行，很显然有转移方程：<br>$$<br>dp_i&#x3D;\max\limits_{j&lt;i}{dp_j}+1 \<br>$$<br>，且满足第 $i$ 行和第 $j$ 行可以相邻。但是发现复杂度是 $\mathcal O(n^2)$ 的，考虑优化。发现最大的 $dp_j$ 一定是没有被其他涂层覆盖的，否则从覆盖它的位置转移一定更优。于是开一棵线段树支持区间推平、区间求最大值即可。</p>
+<h4 id="核心代码-5"><a href="#核心代码-5" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n,m;Pair tr[MAXN&lt;&lt;<span class="number">2</span>],tag[MAXN&lt;&lt;<span class="number">2</span>];<span class="type">int</span> g[MAXN];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    <span class="type">int</span> l,r;<span class="built_in">node</span>()&#123;;&#125;</span><br><span class="line">    <span class="built_in">node</span>(<span class="type">int</span> _l,<span class="type">int</span> _r):<span class="built_in">l</span>(_l),<span class="built_in">r</span>(_r)&#123;&#125;</span><br><span class="line">&#125;;vector&lt;node&gt;a[MAXN];<span class="type">int</span> tmp[MAXN];</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ls p&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rs p&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mid ((l+r)&gt;&gt;1)</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">pup</span><span class="params">(<span class="type">int</span> p)</span></span>&#123;tr[p]=<span class="built_in">qmax</span>(tr[ls],tr[rs]);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">int</span> p,<span class="type">int</span> l,<span class="type">int</span> r,Pair k)</span></span>&#123;tr[p]=k;tag[p]=k;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">pwn</span><span class="params">(<span class="type">int</span> p,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!tag[p].first) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">f</span>(ls,l,mid,tag[p]);<span class="built_in">f</span>(rs,mid+<span class="number">1</span>,r,tag[p]);tag[p].first=<span class="number">0</span>;</span><br><span class="line">&#125;<span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> p,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">    tag[p]=tr[p]=<span class="built_in">Pair</span>(<span class="number">0</span>,<span class="number">-1</span>);<span class="keyword">if</span>(l==r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">build</span>(ls,l,mid);<span class="built_in">build</span>(rs,mid+<span class="number">1</span>,r);</span><br><span class="line">&#125;<span class="function"><span class="type">void</span> <span class="title">upd</span><span class="params">(<span class="type">int</span> p,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> L,<span class="type">int</span> R,Pair c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L&lt;=l&amp;&amp;r&lt;=R) <span class="keyword">return</span> <span class="built_in">f</span>(p,l,r,c),<span class="built_in">void</span>();</span><br><span class="line">    <span class="built_in">pwn</span>(p,l,r);<span class="keyword">if</span>(L&lt;=mid) <span class="built_in">upd</span>(ls,l,mid,L,R,c);</span><br><span class="line">    <span class="keyword">if</span>(R&gt;mid) <span class="built_in">upd</span>(rs,mid+<span class="number">1</span>,r,L,R,c);<span class="built_in">pup</span>(p);</span><br><span class="line">&#125;<span class="function">Pair <span class="title">que</span><span class="params">(<span class="type">int</span> p,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> L,<span class="type">int</span> R)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L&lt;=l&amp;&amp;r&lt;=R) <span class="keyword">return</span> tr[p];<span class="built_in">pwn</span>(p,l,r);</span><br><span class="line">    Pair res=<span class="built_in">make_pair</span>(<span class="number">0</span>,<span class="number">-1</span>);<span class="keyword">if</span>(L&lt;=mid) res=<span class="built_in">que</span>(ls,l,mid,L,R);</span><br><span class="line">    <span class="keyword">if</span>(R&gt;mid) res=<span class="built_in">qmax</span>(res,<span class="built_in">que</span>(rs,mid+<span class="number">1</span>,r,L,R));<span class="keyword">return</span> res;</span><br><span class="line">&#125;<span class="type">int</span> tot;bitset&lt;MAXN&gt;vis;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">qread</span>(n,m);<span class="type">int</span> i,j;<span class="built_in">mem</span>(g,<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="type">int</span> x,l,r;<span class="built_in">qread</span>(x,l,r);tmp[++tmp[<span class="number">0</span>]]=l;tmp[++tmp[<span class="number">0</span>]]=r;</span><br><span class="line">        a[x].<span class="built_in">push_back</span>(node&#123;l,r&#125;);</span><br><span class="line">    &#125;<span class="built_in">sort</span>(tmp+<span class="number">1</span>,tmp+tmp[<span class="number">0</span>]+<span class="number">1</span>);<span class="type">int</span> t=<span class="built_in">unique</span>(tmp+<span class="number">1</span>,tmp+<span class="number">1</span>+tmp[<span class="number">0</span>])-tmp<span class="number">-1</span>;<span class="built_in">build</span>(<span class="number">1</span>,<span class="number">1</span>,tmp[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;a[i].<span class="built_in">size</span>();j++)</span><br><span class="line">        a[i][j].l=<span class="built_in">lower_bound</span>(tmp+<span class="number">1</span>,tmp+<span class="number">1</span>+t,a[i][j].l)-tmp,</span><br><span class="line">        a[i][j].r=<span class="built_in">lower_bound</span>(tmp+<span class="number">1</span>,tmp+<span class="number">1</span>+t,a[i][j].r)-tmp;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        Pair tmp=<span class="built_in">Pair</span>(<span class="number">0</span>,<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> j:a[i]) tmp=<span class="built_in">qmax</span>(tmp,<span class="built_in">que</span>(<span class="number">1</span>,<span class="number">1</span>,t,j.l,j.r));</span><br><span class="line">        g[i]=tmp.second;tmp.first++;tmp.second=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> j:a[i]) <span class="built_in">upd</span>(<span class="number">1</span>,<span class="number">1</span>,t,j.l,j.r,tmp);</span><br><span class="line">    &#125;Pair ans=<span class="built_in">que</span>(<span class="number">1</span>,<span class="number">1</span>,t,<span class="number">1</span>,t);<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,n-ans.first);</span><br><span class="line">    <span class="keyword">for</span>(i=ans.second;i!=<span class="number">-1</span>;i=g[i]) vis[i]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">if</span>(!vis[i]) <span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>,i);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1557/173029974">record</a></p>
+<h3 id="CF1034B-Little-C-Loves-3-II"><a href="#CF1034B-Little-C-Loves-3-II" class="headerlink" title="CF1034B Little C Loves 3 II"></a>CF1034B Little C Loves 3 II</h3><h4 id="题意-6"><a href="#题意-6" class="headerlink" title="题意"></a>题意</h4><p>给定一个$n\times m$的棋盘，每次可以在上面放一对棋子$(x,y)(x’,y’)$，要求 $\mid x-x’\mid+\mid y-y’\mid&#x3D;&#x3D;3$，问最多可以放多少个棋子。</p>
+<h4 id="分析-6"><a href="#分析-6" class="headerlink" title="分析"></a>分析</h4><p>手推出几个较小棋盘的最优摆放方式，大的拿这些拼合，归纳总结即可。</p>
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1034/173014274">record</a></p>
+<h3 id="CF1335F-Robots-on-a-Grid"><a href="#CF1335F-Robots-on-a-Grid" class="headerlink" title="CF1335F Robots on a Grid"></a>CF1335F Robots on a Grid</h3><h4 id="题意-7"><a href="#题意-7" class="headerlink" title="题意"></a>题意</h4><p>给出一个 $n\times m$ 的网格，每个格子被染成黑色或白色，并且在每个格子上都有一个方向。在一些格子中放置机器人，则每个时刻机器人会按照当前格子的方向行走一步。注意：两个机器人不能同时走到一个格子里。<br>请你寻找一个合适的放置方案，使得机器人数量和机器人占据的黑格数量均最多。</p>
+<h4 id="分析-7"><a href="#分析-7" class="headerlink" title="分析"></a>分析</h4><p>发现如果机器人走到同一个环中，那么它们的距离一定一直不变，一定无法相遇；而如果走到不同环中，各自都出不来，也一定无法相遇。于是两个机器人只能在走到环的路上相遇。于是最多走 $n\times m$ 次就能保证该相遇的都相遇了。倍增求能走到的位置即可。</p>
+<h4 id="核心代码-6"><a href="#核心代码-6" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(T--)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);vis[<span class="number">0</span>].<span class="built_in">reset</span>();vis[<span class="number">1</span>].<span class="built_in">reset</span>();</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++) a[(i<span class="number">-1</span>)*m+j]=(s[j]^<span class="number">48</span>)&amp;<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[j]==<span class="string">&#x27;U&#x27;</span>) nxt[<span class="number">0</span>][(i<span class="number">-1</span>)*m+j]=(i<span class="number">-1</span>)*m+j-m;</span><br><span class="line">            <span class="keyword">if</span>(s[j]==<span class="string">&#x27;D&#x27;</span>) nxt[<span class="number">0</span>][(i<span class="number">-1</span>)*m+j]=(i<span class="number">-1</span>)*m+j+m;</span><br><span class="line">            <span class="keyword">if</span>(s[j]==<span class="string">&#x27;L&#x27;</span>) nxt[<span class="number">0</span>][(i<span class="number">-1</span>)*m+j]=(i<span class="number">-1</span>)*m+j<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span>(s[j]==<span class="string">&#x27;R&#x27;</span>) nxt[<span class="number">0</span>][(i<span class="number">-1</span>)*m+j]=(i<span class="number">-1</span>)*m+j+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">20</span>;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n*m;j++) nxt[i][j]=nxt[i<span class="number">-1</span>][nxt[i<span class="number">-1</span>][j]];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n*m;i++)&#123;</span><br><span class="line">        <span class="type">int</span> pos=i;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">20</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>((n*m)&amp;(<span class="number">1</span>&lt;&lt;j)) pos=nxt[j][pos];</span><br><span class="line">        &#125;vis[a[i]][pos]=<span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="type">int</span> tot=<span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n*m;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[<span class="number">0</span>][i]) ans++,tot++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(vis[<span class="number">1</span>][i]) tot++;</span><br><span class="line">    &#125;<span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,tot,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codeforc.es/problemset/submission/1335/173043813">record</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/22/%E5%AF%92%E5%81%87%E5%81%9A%E9%A2%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E8%AE%B0%E5%BD%95/" rel="prev" title="寒假做题不完全记录">
+                  <i class="fa fa-angle-left"></i> 寒假做题不完全记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/03/22/%E4%B8%80%E7%B1%BB%E7%89%B9%E6%AE%8A%E7%9A%84%E5%8C%BA%E9%97%B4-dp/" rel="next" title="一类特殊的区间 dp">
+                  一类特殊的区间 dp <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xingyu Lu</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
